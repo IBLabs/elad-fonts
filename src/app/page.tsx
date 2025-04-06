@@ -1,5 +1,6 @@
 import Link from "next/link";
 import localFont from "next/font/local";
+import Image from "next/image";
 
 const emulsi3 = localFont({
   src: "../fonts/emulsi3.otf",
@@ -41,31 +42,18 @@ const fontFamilies = [
 ];
 
 export default function Home() {
-  // Get the letters of "אינקטראפ"
-  const letters = "אינקטראפ".split("");
-
   return (
     <main className="bg-black">
-      <div className="px-4 py-6 pb-2 text-center">
-        <h1 className="text-white flex justify-center items-baseline">
-          {letters.map((letter, index) => {
-            // Get a random font family
-            const randomFont =
-              fontFamilies[Math.floor(Math.random() * fontFamilies.length)]
-                .font;
-
-            return (
-              <span
-                key={index}
-                className={`${randomFont.className} text-[12vw] md:text-[8vw]`}
-              >
-                {letter}
-              </span>
-            );
-          })}
-        </h1>
+      <div className="px-4 py-6 mt-8 mb-2 text-center">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={180}
+          height={60}
+          className="mx-auto opacity-90"
+        />
       </div>
-      <section className="px-4 pt-2 pb-16">
+      <section className="px-4 pt-4 pb-16">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
           {fontFamilies.map((family) => (
             <Link

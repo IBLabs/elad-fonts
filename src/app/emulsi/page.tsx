@@ -2,6 +2,7 @@ import FontWeightDisplay from "@/components/FontWeightDisplay";
 import PurchaseButton from "@/components/PurchaseButton";
 import GlyphsTable from "@/components/GlyphsTable";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const simplerPro = localFont({
   src: "../../fonts/simpler.otf",
@@ -68,21 +69,22 @@ const fontWeights = [
 export default function EmulsiPage() {
   return (
     <div className="min-h-screen bg-black overflow-x-hidden">
-      {/* Header Section */}
       <div className="relative h-[50vh] md:h-[80vh] w-full">
-        {/* Background image - Placeholder */}
-        <div
-          className="absolute inset-0 bg-[url('/emulsi-header.jpg')] bg-cover bg-center"
-          style={{ backgroundPosition: "50% 30%" }}
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black" />
+        {/* Background image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1E293B] to-black" />
 
         {/* Content */}
-        <div className="relative h-full flex items-end md:items-center justify-end">
-          <div className="w-full px-4 pb-8 md:py-[60px]">
+        <div className="relative h-full flex items-end">
+          <div className="w-full px-4 pb-8 md:pb-[60px]">
+            <Link
+              href="/"
+              className="text-white bg-white/10 px-3 py-2 rounded-lg hover:bg-white/20 transition-colors inline-block mb-8 float-left text-lg"
+            >
+              ←
+            </Link>
+
             <h1
-              className={`${emulsi4.className} text-[15vw] md:text-[20vw] leading-[1.2em] text-white w-full text-right`}
+              className={`${emulsi4.className} text-[20vw] md:text-[25vw] leading-[0.9em] text-white w-full text-right clear-both`}
             >
               אמולסי
             </h1>

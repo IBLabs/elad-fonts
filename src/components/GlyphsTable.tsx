@@ -25,12 +25,20 @@ const hebrewGlyphs = [
   ["'", ",", ".", "/", "?", "\\", "|", "<", ">", " "],
 ];
 
+// Flatten the array for continuous display
+const flattenedGlyphs = hebrewGlyphs.flat();
+
 export default function GlyphsTable({
   fontWeights,
   labelFont,
 }: GlyphsTableProps) {
   const [activeTab, setActiveTab] = useState(0);
   const activeFont = fontWeights[activeTab];
+  const [selectedGlyph, setSelectedGlyph] = useState<string | null>(null);
+
+  const handleContainerClick = () => {
+    setSelectedGlyph(null);
+  };
 
   return (
     <div className="w-full">
@@ -53,20 +61,32 @@ export default function GlyphsTable({
         ))}
       </div>
 
-      <div className="w-full overflow-x-auto">
-        <div className={`${activeFont.font.className} min-w-[600px]`}>
-          {hebrewGlyphs.map((row, rowIndex) => (
-            <div key={rowIndex} className="grid grid-cols-10 gap-2 mb-2">
-              {row.map((glyph, index) => (
-                <div
-                  key={index}
-                  className="aspect-square bg-white/5 rounded-lg flex items-center justify-center hover:bg-white/10 transition-colors"
-                >
-                  <span className={`text-3xl text-white`}>{glyph}</span>
-                </div>
-              ))}
-            </div>
-          ))}
+      <div className="w-full">
+        <div
+          className={`${activeFont.font.className} glyph-container relative`}
+          onClick={handleContainerClick}
+        >
+          <div className="grid grid-cols-7 sm:grid-cols-10 md:grid-cols-12 gap-2 glyph-container relative">
+            {flattenedGlyphs.map((glyph, index) => (
+              <div
+                key={index}
+                className={`flex items-center justify-center cursor-pointer transition-all duration-75 rounded-lg
+                  ${
+                    selectedGlyph === glyph
+                      ? "scale-[1.5] transform z-10 bg-gray-800 p-0 w-auto h-auto"
+                      : "bg-white/5 hover:bg-white/10 p-2 aspect-square"
+                  }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedGlyph(glyph === selectedGlyph ? null : glyph);
+                }}
+              >
+                <span className="text-3xl text-white flex items-center justify-center leading-none">
+                  {glyph}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

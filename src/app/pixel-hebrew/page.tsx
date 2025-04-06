@@ -2,6 +2,7 @@ import FontWeightDisplay from "@/components/FontWeightDisplay";
 import PurchaseButton from "@/components/PurchaseButton";
 import GlyphsTable from "@/components/GlyphsTable";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const simplerPro = localFont({
   src: "../../fonts/simpler.otf",
@@ -58,8 +59,15 @@ export default function PixelHebrewPage() {
         {/* Content */}
         <div className="relative h-full flex items-end md:items-center justify-end">
           <div className="w-full px-4 pb-8 md:py-[60px]">
+            <Link
+              href="/"
+              className="text-white bg-white/10 px-3 py-2 rounded-lg hover:bg-white/20 transition-colors inline-block mb-8 float-left text-lg"
+            >
+              ←
+            </Link>
+
             <h1
-              className={`${pixelHebrewBlack.className} text-[30vw] md:text-[40vw] leading-[1em] text-white w-full text-right`}
+              className={`${pixelHebrewBlack.className} text-[20vw] md:text-[25vw] leading-[0.9em] text-white w-full text-right clear-both`}
             >
               טטרא
             </h1>

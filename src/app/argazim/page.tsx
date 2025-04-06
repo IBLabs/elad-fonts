@@ -1,6 +1,8 @@
 import FontWeightDisplay from "@/components/FontWeightDisplay";
 import PurchaseButton from "@/components/PurchaseButton";
+import GlyphsTable from "@/components/GlyphsTable";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const simplerPro = localFont({
   src: "../../fonts/simpler.otf",
@@ -99,23 +101,38 @@ const fontWeights = [
 
 export default function ArgazimPage() {
   return (
-    <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
-      <div className="w-full mx-auto flex flex-col items-start gap-8">
-        <h1
-          className={`${argazimBlack.className} text-[15vw] leading-[1.2em] text-white w-full text-right`}
-        >
-          ארגזים
-        </h1>
+    <div className="min-h-screen bg-black overflow-x-hidden">
+      <div className="relative h-[50vh] md:h-[80vh] w-full">
+        {/* Background image */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2D3748] to-black" />
 
+        {/* Content */}
+        <div className="relative h-full flex items-end">
+          <div className="w-full px-4 pb-8 md:pb-[60px]">
+            <Link
+              href="/"
+              className="text-white bg-white/10 px-3 py-2 rounded-lg hover:bg-white/20 transition-colors inline-block mb-8 float-left text-lg"
+            >
+              ←
+            </Link>
+
+            <h1
+              className={`${argazimBlack.className} text-[20vw] md:text-[25vw] leading-[0.9em] text-white w-full text-right clear-both`}
+            >
+              ארגזים
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full mx-auto flex flex-col items-start gap-8 px-4 py-[60px]">
         <p
-          className={`${simplerPro.className} text-[20px] leading-[1.3em] text-white text-right`}
+          className={`${simplerPro.className} text-lg leading-[1.3em] text-white text-right`}
         >
           פונט ארגזים הוא פונט עברי מודרני המשלב גיאומטריה נקייה עם אופי ייחודי.
           הפונט מגיע בארבעה משקלים וגרסאות נטויות תואמות, ומתאים במיוחד לכותרות
           ולטקסטים קצרים המבקשים להדגיש את הייחודיות שלהם.
         </p>
-
-        <div className="h-8" />
 
         <div className="flex flex-col items-start gap-[18px]">
           {fontWeights.map((fontWeight) => (
@@ -126,6 +143,10 @@ export default function ArgazimPage() {
             />
           ))}
         </div>
+
+        <div className="h-8" />
+
+        <GlyphsTable fontWeights={fontWeights} labelFont={simplerPro} />
 
         <div className="h-8" />
 
