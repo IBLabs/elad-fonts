@@ -47,15 +47,15 @@ export default function PixelHebrewPage() {
     <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
       <div className="w-full mx-auto flex flex-col items-start gap-8">
         <h1
-          className={`${pixelHebrewBlack.className} text-[96px] leading-[1.6em] text-white`}
+          className={`${pixelHebrewBlack.className} text-[15vw] leading-[1.2em] text-white w-full text-right`}
         >
-          פיקסל עברית
+          טטרא
         </h1>
 
         <p
           className={`${simplerPro.className} text-[20px] leading-[1.3em] text-white text-right`}
         >
-          פונט פיקסל עברית הוא פונט ייחודי המשלב אסתטיקה של משחקי מחשב רטרו עם
+          פונט טטרא הוא פונט ייחודי המשלב אסתטיקה של משחקי מחשב רטרו עם
           טיפוגרפיה עברית מודרנית. הפונט מגיע בשלושה משקלים ומתאים במיוחד
           לעיצובים המבקשים להעביר תחושה נוסטלגית או משחקית.
         </p>
