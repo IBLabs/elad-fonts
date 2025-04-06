@@ -18,6 +18,18 @@ const pixelHebrewBlack = localFont({
   src: "../fonts/PixelHebrew-Black.otf",
 });
 
+const zaidnerRegular = localFont({
+  src: "../fonts/Zaidner_Font-Regular.ttf",
+});
+
+const franksiRegular = localFont({
+  src: "../fonts/Franksi_Font-02.ttf",
+});
+
+const franksiMonoink = localFont({
+  src: "../fonts/Franksi_Monoink-02.otf",
+});
+
 const fontFamilies = [
   {
     name: "אמולסי",
@@ -38,6 +50,21 @@ const fontFamilies = [
     name: "טטרא",
     font: pixelHebrewBlack,
     href: "/pixel-hebrew",
+  },
+  {
+    name: "זיידנר",
+    font: zaidnerRegular,
+    href: "/zaidner",
+  },
+  {
+    name: "פרנקסי",
+    font: franksiRegular,
+    href: "/franksi",
+  },
+  {
+    name: "פרנקסי מונואינק",
+    font: franksiMonoink,
+    href: "/franksi-monoink",
   },
 ];
 
