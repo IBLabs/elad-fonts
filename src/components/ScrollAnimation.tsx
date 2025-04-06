@@ -9,6 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import localFont from "next/font/local";
+import { NextFont } from "next/dist/compiled/@next/font";
 
 const emulsi3 = localFont({
   src: "../fonts/emulsi3.otf",
@@ -33,7 +34,7 @@ const getRandomFont = () => {
 
 interface AnimatedLetterProps {
   letter: string;
-  font: any;
+  font: NextFont;
   progress: MotionValue<number>;
   index: number;
 }
