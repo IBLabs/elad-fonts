@@ -30,6 +30,10 @@ const franksiMonoink = localFont({
   src: "../fonts/Franksi_Monoink-02.otf",
 });
 
+const zavatHalavBold = localFont({
+  src: "../fonts/ZavatHalav-Bold.otf",
+});
+
 const fontFamilies = [
   {
     name: "אמולסי",
@@ -65,6 +69,11 @@ const fontFamilies = [
     name: "פרנקסי מונואינק",
     font: franksiMonoink,
     href: "/franksi-monoink",
+  },
+  {
+    name: "חימר פרא",
+    font: zavatHalavBold,
+    href: "/zavat-halav",
   },
 ];
 
