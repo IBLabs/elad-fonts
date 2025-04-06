@@ -102,7 +102,7 @@ export default function ArgazimPage() {
     <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
       <div className="w-full mx-auto flex flex-col items-start gap-8">
         <h1
-          className={`${argazimBlack.className} text-[96px] leading-[1.6em] text-white`}
+          className={`${argazimBlack.className} text-[15vw] leading-[1.2em] text-white w-full text-right`}
         >
           ארגזים
         </h1>

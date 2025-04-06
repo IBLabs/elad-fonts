@@ -1,103 +1,76 @@
-import FontWeightDisplay from "@/components/FontWeightDisplay";
-import PurchaseButton from "@/components/PurchaseButton";
+import Link from "next/link";
 import localFont from "next/font/local";
 
 const simplerPro = localFont({
   src: "../fonts/simpler.otf",
 });
 
-const emulsi = localFont({
-  src: "../fonts/emulsi.otf",
-});
-
-const emulsi1 = localFont({
-  src: "../fonts/emulsi1.otf",
-});
-
-const emulsi2 = localFont({
-  src: "../fonts/emulsi2.otf",
-});
-
 const emulsi3 = localFont({
   src: "../fonts/emulsi3.otf",
 });
 
-const emulsi4 = localFont({
-  src: "../fonts/emulsi4.otf",
+const argazimBlack = localFont({
+  src: "../fonts/Argazim_Font-Black.ttf",
 });
 
-const fontWeights = [
+const maccabiahBold = localFont({
+  src: "../fonts/Maccabiah23-Bold.ttf",
+});
+
+const pixelHebrewBlack = localFont({
+  src: "../fonts/PixelHebrew-Black.otf",
+});
+
+const fontFamilies = [
   {
-    weight: "קל",
-    weightNumber: "300",
-    sampleText: "עטלף אכל פרי שלכד ברש",
-    fontName: "emulsi",
-    font: emulsi,
-  },
-  {
-    weight: "רגיל",
-    weightNumber: "400",
-    sampleText: "עטלף אכל פרי שלכד ברש",
-    fontName: "emulsi1",
-    font: emulsi1,
-  },
-  {
-    weight: "מדיום",
-    weightNumber: "500",
-    sampleText: "עטלף אכל פרי שלכד ברש",
-    fontName: "emulsi2",
-    font: emulsi2,
-  },
-  {
-    weight: "כבד",
-    weightNumber: "600",
-    sampleText: "עטלף אכל פרי שלכד ברש",
-    fontName: "emulsi3",
+    name: "אמולסי",
     font: emulsi3,
+    href: "/emulsi",
   },
   {
-    weight: "שחור",
-    weightNumber: "700",
-    sampleText: "עטלף אכל פרי שלכד ברש",
-    fontName: "emulsi4",
-    font: emulsi4,
+    name: "ארגזים",
+    font: argazimBlack,
+    href: "/argazim",
+  },
+  {
+    name: "מכביה 23",
+    font: maccabiahBold,
+    href: "/maccabiah",
+  },
+  {
+    name: "פיקסל עברית",
+    font: pixelHebrewBlack,
+    href: "/pixel-hebrew",
   },
 ];
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
-      <div className="w-full mx-auto flex flex-col items-start gap-8">
+      <div className="w-full mx-auto flex flex-col items-start gap-12">
         <h1
-          className={`${emulsi3.className} text-[96px] leading-[1.6em] text-white`}
+          className={`${simplerPro.className} text-[8vw] text-white text-right w-full`}
         >
-          אמולסי
+          משפחות גופנים
         </h1>
 
-        <p
-          className={`${simplerPro.className} text-[20px] leading-[1.3em] text-white text-right`}
-        >
-          פרנקסי הוא פונט עברי עם קריצה – שילוב נועז בין גיאומטריה מוקפדת לאופי
-          שובב. הקווים שלו חדים אבל ידידותיים, והאותיות מתנדנדות בעדינות בין סדר
-          לאי-סדר. מתאים לטקסטים שמבקשים לבלוט, לשדר ייחודיות, ולהכניס קצת אופי
-          לכל מילה.
-        </p>
-
-        <div className="h-8" />
-
-        <div className="flex flex-col items-start gap-[18px]">
-          {fontWeights.map((fontWeight) => (
-            <FontWeightDisplay
-              key={fontWeight.fontName}
-              {...fontWeight}
-              labelFont={simplerPro}
-            />
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+          {fontFamilies.map((family) => (
+            <Link
+              key={family.href}
+              href={family.href}
+              className="block w-full group"
+            >
+              <div className="w-full aspect-[3/2] bg-white/5 rounded-lg p-8 flex items-center justify-center hover:bg-white/10 transition-colors">
+                <h2
+                  className={`${family.font.className} text-[10vw] md:text-[5vw] text-white text-center`}
+                >
+                  {family.name}
+                </h2>
+              </div>
+            </Link>
           ))}
         </div>
-
-        <div className="h-8" />
-
-        <PurchaseButton />
       </div>
     </div>
   );
