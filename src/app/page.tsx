@@ -6,6 +6,10 @@ const simplerPro = localFont({
   src: "../fonts/simpler.otf",
 });
 
+const emulsi = localFont({
+  src: "../fonts/emulsi.otf",
+});
+
 const emulsi1 = localFont({
   src: "../fonts/emulsi1.otf",
 });
@@ -21,6 +25,44 @@ const emulsi3 = localFont({
 const emulsi4 = localFont({
   src: "../fonts/emulsi4.otf",
 });
+
+const fontWeights = [
+  {
+    weight: "קל",
+    weightNumber: "300",
+    sampleText: "עטלף אכל פרי שלכד ברש",
+    fontName: "emulsi",
+    font: emulsi,
+  },
+  {
+    weight: "רגיל",
+    weightNumber: "400",
+    sampleText: "עטלף אכל פרי שלכד ברש",
+    fontName: "emulsi1",
+    font: emulsi1,
+  },
+  {
+    weight: "מדיום",
+    weightNumber: "500",
+    sampleText: "עטלף אכל פרי שלכד ברש",
+    fontName: "emulsi2",
+    font: emulsi2,
+  },
+  {
+    weight: "כבד",
+    weightNumber: "600",
+    sampleText: "עטלף אכל פרי שלכד ברש",
+    fontName: "emulsi3",
+    font: emulsi3,
+  },
+  {
+    weight: "שחור",
+    weightNumber: "700",
+    sampleText: "עטלף אכל פרי שלכד ברש",
+    fontName: "emulsi4",
+    font: emulsi4,
+  },
+];
 
 export default function Home() {
   return (
@@ -44,38 +86,13 @@ export default function Home() {
         <div className="h-8" />
 
         <div className="flex flex-col items-start gap-[18px]">
-          <FontWeightDisplay
-            weight="רגיל"
-            weightNumber="400"
-            sampleText="עטלף אכל פרי שלכד ברש"
-            fontName="emulsi1"
-            font={emulsi1}
-            labelFont={simplerPro}
-          />
-          <FontWeightDisplay
-            weight="רגיל"
-            weightNumber="400"
-            sampleText="עטלף אכל פרי שלכד ברש"
-            fontName="emulsi2"
-            font={emulsi2}
-            labelFont={simplerPro}
-          />
-          <FontWeightDisplay
-            weight="רגיל"
-            weightNumber="400"
-            sampleText="עטלף אכל פרי שלכד ברש"
-            fontName="emulsi3"
-            font={emulsi3}
-            labelFont={simplerPro}
-          />
-          <FontWeightDisplay
-            weight="רגיל"
-            weightNumber="400"
-            sampleText="עטלף אכל פרי שלכד ברש"
-            fontName="emulsi4"
-            font={emulsi4}
-            labelFont={simplerPro}
-          />
+          {fontWeights.map((fontWeight) => (
+            <FontWeightDisplay
+              key={fontWeight.fontName}
+              {...fontWeight}
+              labelFont={simplerPro}
+            />
+          ))}
         </div>
 
         <div className="h-8" />
