@@ -1,5 +1,6 @@
 import FontWeightDisplay from "@/components/FontWeightDisplay";
 import PurchaseButton from "@/components/PurchaseButton";
+import GlyphsTable from "@/components/GlyphsTable";
 import localFont from "next/font/local";
 
 const simplerPro = localFont({
@@ -44,23 +45,36 @@ const fontWeights = [
 
 export default function PixelHebrewPage() {
   return (
-    <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
-      <div className="w-full mx-auto flex flex-col items-start gap-8">
-        <h1
-          className={`${pixelHebrewBlack.className} text-[15vw] leading-[1.2em] text-white w-full text-right`}
-        >
-          טטרא
-        </h1>
+    <div className="min-h-screen bg-black overflow-x-hidden">
+      <div className="relative h-[50vh] md:h-[80vh] w-full">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-[url('/tetra-header.png')] bg-cover bg-center"
+          style={{ backgroundPosition: "50% 30%" }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black" />
 
+        {/* Content */}
+        <div className="relative h-full flex items-end md:items-center justify-end">
+          <div className="w-full px-4 pb-8 md:py-[60px]">
+            <h1
+              className={`${pixelHebrewBlack.className} text-[30vw] md:text-[40vw] leading-[1em] text-white w-full text-right`}
+            >
+              טטרא
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full mx-auto flex flex-col items-start gap-8 px-4 py-[8px]">
         <p
-          className={`${simplerPro.className} text-[20px] leading-[1.3em] text-white text-right`}
+          className={`${simplerPro.className} text-lg leading-[1.3em] text-white text-right`}
         >
           פונט טטרא הוא פונט ייחודי המשלב אסתטיקה של משחקי מחשב רטרו עם
           טיפוגרפיה עברית מודרנית. הפונט מגיע בשלושה משקלים ומתאים במיוחד
           לעיצובים המבקשים להעביר תחושה נוסטלגית או משחקית.
         </p>
-
-        <div className="h-8" />
 
         <div className="flex flex-col items-start gap-[18px]">
           {fontWeights.map((fontWeight) => (
@@ -71,6 +85,10 @@ export default function PixelHebrewPage() {
             />
           ))}
         </div>
+
+        <div className="h-8" />
+
+        <GlyphsTable fontWeights={fontWeights} labelFont={simplerPro} />
 
         <div className="h-8" />
 

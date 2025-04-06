@@ -1,5 +1,6 @@
 import FontWeightDisplay from "@/components/FontWeightDisplay";
 import PurchaseButton from "@/components/PurchaseButton";
+import GlyphsTable from "@/components/GlyphsTable";
 import localFont from "next/font/local";
 
 const simplerPro = localFont({
@@ -66,24 +67,39 @@ const fontWeights = [
 
 export default function EmulsiPage() {
   return (
-    <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
-      <div className="w-full mx-auto flex flex-col items-start gap-8">
-        <h1
-          className={`${emulsi3.className} text-[15vw] leading-[1.2em] text-white w-full text-right`}
-        >
-          אמולסי
-        </h1>
+    <div className="min-h-screen bg-black overflow-x-hidden">
+      {/* Header Section */}
+      <div className="relative h-[50vh] md:h-[80vh] w-full">
+        {/* Background image - Placeholder */}
+        <div
+          className="absolute inset-0 bg-[url('/emulsi-header.jpg')] bg-cover bg-center"
+          style={{ backgroundPosition: "50% 30%" }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black" />
 
+        {/* Content */}
+        <div className="relative h-full flex items-end md:items-center justify-end">
+          <div className="w-full px-4 pb-8 md:py-[60px]">
+            <h1
+              className={`${emulsi4.className} text-[15vw] md:text-[20vw] leading-[1.2em] text-white w-full text-right`}
+            >
+              אמולסי
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content Section */}
+      <div className="w-full mx-auto flex flex-col items-start gap-8 px-4 py-[60px]">
         <p
-          className={`${simplerPro.className} text-[20px] leading-[1.3em] text-white text-right`}
+          className={`${simplerPro.className} text-lg leading-[1.3em] text-white text-right`}
         >
           פרנקסי הוא פונט עברי עם קריצה – שילוב נועז בין גיאומטריה מוקפדת לאופי
           שובב. הקווים שלו חדים אבל ידידותיים, והאותיות מתנדנדות בעדינות בין סדר
           לאי-סדר. מתאים לטקסטים שמבקשים לבלוט, לשדר ייחודיות, ולהכניס קצת אופי
           לכל מילה.
         </p>
-
-        <div className="h-8" />
 
         <div className="flex flex-col items-start gap-[18px]">
           {fontWeights.map((fontWeight) => (
@@ -94,6 +110,11 @@ export default function EmulsiPage() {
             />
           ))}
         </div>
+
+        <div className="h-8" />
+
+        {/* Add GlyphsTable */}
+        <GlyphsTable fontWeights={fontWeights} labelFont={simplerPro} />
 
         <div className="h-8" />
 
