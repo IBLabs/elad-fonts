@@ -24,8 +24,8 @@ const emulsi4 = localFont({
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black py-[60px] px-[3px]">
-      <div className="max-w-[387px] mx-auto p-[14px] flex flex-col items-start gap-8">
+    <div className="min-h-screen bg-black py-[60px] px-4 overflow-x-hidden">
+      <div className="w-full mx-auto flex flex-col items-start gap-8">
         <h1
           className={`${emulsi3.className} text-[96px] leading-[1.6em] text-white`}
         >
