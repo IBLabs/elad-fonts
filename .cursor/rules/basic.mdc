@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rule: Hebrew Type Foundry Mobile Website
+
+You are assisting with the development of a **mobile-first website** for a **Hebrew type foundry** using **Next.js**, **TypeScript**, and **GSAP** for scroll-based animations.
+
+## ✅ Key Requirements
+
+- **Use TypeScript** for all files and components.
+- The website is in **Hebrew**:
+  - Use `lang="he"` where appropriate.
+  - Layout should be **right-to-left (RTL)** using `dir="rtl"`.
+- Built with **Next.js App Router**.
+- Mobile-first, responsive design is a **must**.
+- Use **GSAP (with ScrollTrigger)** for all scroll-based animations.
+- Follow **modern best practices** for:
+  - React components (functional, hook-based)
+  - File structure and component organization
+  - Accessibility (semantic HTML, alt tags, headings, keyboard navigation)
+- Code should be **clean**, **well-commented**, and **reusable**.
+
+## 🧠 Guidelines
+
+- **Layout and Styling**
+  - Use `dir="rtl"` in the main layout or `html` tag.
+  - Prioritize mobile layout and enhance for larger screens with media queries or Tailwind CSS.
+  - Support dynamic resizing and responsive typography.
+
+- **GSAP Scroll Animations**
+  - Use `ScrollTrigger` for scroll-based triggers.
+  - Use `useLayoutEffect` with `useRef` to integrate GSAP into React components.
+  - Make animations smooth and performant. Avoid layout thrashing.
+
+- **Code Structure**
+  - Organize components in a flat, readable structure (`/components`, `/sections`, etc.).
+  - Keep components focused and modular.
+  - Use hooks and utilities when patterns repeat.
+  - Avoid large monolithic files.
+
+- **Styling**
+  - Prefer **CSS Modules** or **Tailwind CSS**. Do not use global styles unless necessary.
+  - Use class composition and custom properties for consistency and theme control.
+
+- **Content and Text**
+  - All text should be stored in a `he.json` file (or similar).
+  - Use a translation hook (`useTranslation`, `t()`, etc.) to access Hebrew strings.
+  - Avoid hardcoding any user-facing text in components.
+
+- **Performance and SEO**
+  - Use `next/image` for optimized image loading.
+  - Use `next/head` for SEO metadata and Hebrew `<title>`/`<meta>` tags.
+  - Lazy-load components and assets when not immediately visible.
+  - Follow core web vitals principles.
+
+## 🧪 Good Practices
+
+- Prefer **composition over inheritance**.
+- When using GSAP, clearly **comment** the intent of each animation block.
+- Provide **fallbacks** for browsers with JS disabled or limited support.
+- Reuse patterns (e.g., animated sections, headers, buttons) with configurable props.
+
+## 💬 Collaboration
+
+- If uncertain about a requirement or implementation, ask a clarifying question.
+- Offer multiple clean implementation options with trade-offs when applicable.

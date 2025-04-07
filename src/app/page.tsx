@@ -3,77 +3,77 @@ import localFont from "next/font/local";
 import Image from "next/image";
 
 const emulsi3 = localFont({
-  src: "../fonts/emulsi3.otf",
+  src: "../fonts/emulsi/emulsi3.otf",
 });
 
 const argazimBlack = localFont({
-  src: "../fonts/Argazim_Font-Black.ttf",
+  src: "../fonts/argazim/Argazim_Font-Black.ttf",
 });
 
 const maccabiahBold = localFont({
-  src: "../fonts/Maccabiah23-Bold.ttf",
+  src: "../fonts/maccabiah23/Maccabiah23-Bold.ttf",
 });
 
 const pixelHebrewBlack = localFont({
-  src: "../fonts/PixelHebrew-Black.otf",
+  src: "../fonts/tetra/PixelHebrew-Black.otf",
 });
 
 const zaidnerRegular = localFont({
-  src: "../fonts/Zaidner_Font-Regular.ttf",
+  src: "../fonts/zaidner/Zaidner_Font-Regular.ttf",
 });
 
 const franksiRegular = localFont({
-  src: "../fonts/Franksi_Font-02.ttf",
+  src: "../fonts/franksi/Franksi_Font-02.ttf",
 });
 
 const franksiMonoink = localFont({
-  src: "../fonts/Franksi_Monoink-02.otf",
+  src: "../fonts/franksi-monoink/Franksi_Monoink-02.otf",
 });
 
 const zavatHalavBold = localFont({
-  src: "../fonts/ZavatHalav-Bold.otf",
+  src: "../fonts/hemar-pere/ZavatHalav-Bold.otf",
 });
 
 const fontFamilies = [
   {
     name: "אמולסי",
     font: emulsi3,
-    href: "/emulsi",
+    href: "/fonts/emulsi",
   },
   {
     name: "ארגזים",
     font: argazimBlack,
-    href: "/argazim",
+    href: "/fonts/argazim",
   },
   {
     name: "מכביה 23",
     font: maccabiahBold,
-    href: "/maccabiah",
+    href: "/fonts/maccabiah",
   },
   {
     name: "טטרא",
     font: pixelHebrewBlack,
-    href: "/pixel-hebrew",
+    href: "/fonts/pixel-hebrew",
   },
   {
     name: "זיידנר",
     font: zaidnerRegular,
-    href: "/zaidner",
+    href: "/fonts/zaidner",
   },
   {
     name: "פרנקסי",
     font: franksiRegular,
-    href: "/franksi",
+    href: "/fonts/franksi",
   },
   {
     name: "פרנקסי מונואינק",
     font: franksiMonoink,
-    href: "/franksi-monoink",
+    href: "/fonts/franksi-monoink",
   },
   {
     name: "חימר פרא",
     font: zavatHalavBold,
-    href: "/zavat-halav",
+    href: "/fonts/zavat-halav",
   },
 ];
 

@@ -5,7 +5,6 @@ interface FontWeightDisplayProps {
   weight: string;
   weightNumber: string;
   sampleText: string;
-  fontName: string;
   font: NextFont;
   labelFont: NextFont;
 }

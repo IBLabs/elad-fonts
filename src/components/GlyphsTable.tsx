@@ -7,7 +7,6 @@ interface FontWeight {
   weight: string;
   weightNumber: string;
   font: NextFont;
-  fontName: string;
 }
 
 interface GlyphsTableProps {
@@ -47,7 +46,7 @@ export default function GlyphsTable({
       <div className="flex overflow-x-auto gap-2 mb-6 pb-2">
         {fontWeights.map((weight, index) => (
           <button
-            key={weight.fontName}
+            key={index}
             onClick={() => setActiveTab(index)}
             className={`${labelFont.className}
               px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${
