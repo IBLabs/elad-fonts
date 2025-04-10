@@ -3,6 +3,7 @@
 import HeroSection from "@/components/main-page/HeroSection";
 import FontList from "@/components/main-page/FontList";
 import { argazim, emulsi } from "@/config/fonts";
+import EmptyHeroSection from "@/components/main-page/EmptyHeroSection";
 
 // Example data - replace with real data later
 const SAMPLE_FONTS = [
@@ -66,7 +67,7 @@ const SAMPLE_FONTS = [
 export default function NewMainPage() {
   return (
     <main className={`min-h-screen ${argazim.variable} ${emulsi.variable}`}>
-      <HeroSection title="אינקטראפ" subtitle="אלעד אליקים" />
+      <EmptyHeroSection />
       <FontList fonts={SAMPLE_FONTS} />
     </main>
   );
